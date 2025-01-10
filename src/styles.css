@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+html, body { 
+    height: 100%; 
+  }
+  
+  body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+  }
+  
+
+  .mat-button.custom-button {
+    background-color: #766cfa; /* Green background */
+    color: white; /* White text */
+  }
+  
+  .mat-button.custom-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  

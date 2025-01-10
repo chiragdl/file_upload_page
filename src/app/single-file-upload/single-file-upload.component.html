@@ -1,0 +1,40 @@
+<h2>Upload Your Files</h2>
+
+<button mat-raised-button color="accent" class="choose-file-button" (click)="fileInput.click()">Choose Files</button>
+<input type="file" class="upload-input" (change)="handleFileSelection($event)" #fileInput multiple style="display: none;" />
+
+<div *ngIf="selectedFiles.length > 0">
+  <section class="file-details">
+    <h3>Selected File Details:</h3>
+    <ul>
+      <li *ngFor="let file of selectedFiles; let i = index">
+        <strong>Filename:</strong> {{file.name}}<br>
+        <strong>File Type:</strong> {{file.type}}<br>
+        <strong>File Size:</strong> {{file.size}} bytes<br>
+        <div *ngIf="filePreviews[i]">
+          <strong>File Preview:</strong><br>
+          <img [src]="filePreviews[i]" alt="File Preview" class="file-preview" />
+        </div>
+      </li>
+    </ul>
+  </section>
+   <!-- Upload button -->
+  <button mat-raised-button color="primary" class="upload-button" (click)="uploadFiles()">Start Upload</button>
+
+  <section [ngSwitch]="uploadStatus">
+    <p *ngSwitchCase="'inProgress'">⏳ Uploading, please wait...</p>
+    <p *ngSwitchCase="'completed'">✅ Files uploaded successfully!</p>
+    <p *ngSwitchCase="'error'">❌ An error occurred during upload.</p>
+    <p *ngSwitchDefault>🔄 Ready to upload your files.</p>
+  </section>
+</div>
+<!-- display files-->
+<h2>All Files</h2>
+<div class="file-gallery">
+  <div *ngFor="let file of files; let i = index" class="file-item" [ngClass]="{'more-images': i === 3 && files.length > 4}">
+    <img *ngIf="i < 4" [src]="file.preview" class="file-preview" (click)="openImageDialog(i)">
+    <div *ngIf="i === 3 && files.length > 4" class="more-overlay" (click)="openImageDialog(i)">
+      <span>+{{ files.length - 4 }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,177 @@
+/* General styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.upload-input {
+  margin-bottom: 20px;
+}
+
+.choose-file-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.choose-file-button.mat-raised-button {
+  background-color: #ff4081; /* Accent color */
+  color: white;
+}
+
+.choose-file-button.mat-raised-button:hover {
+  background-color: #f50057; /* Darker shade of accent color */
+}
+
+.file-details {
+  margin-bottom: 20px;
+}
+
+.file-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.file-details li {
+  margin-bottom: 10px;
+}
+
+/* Style for the upload button */
+.upload-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button.mat-raised-button {
+  background-color: #3f51b5; /* Primary color */
+  color: white;
+}
+
+.upload-button.mat-raised-button:hover {
+  background-color: #303f9f; /* Darker shade of primary color */
+}
+
+.upload-button.mat-raised-button:disabled {
+  background-color: #cccccc; /* Disabled button color */
+  cursor: not-allowed;
+}
+
+/* Styles for the upload status section */
+section[ngSwitch] {
+  margin-top: 20px;
+}
+
+section[ngSwitch] p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* filepath: /home/chirag/File_upload/Angular/file-upload-app/src/app/single-file-upload/single-file-upload.component.css */
+.file-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 0.1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.file-item {
+  position: relative;
+}
+
+.file-preview {
+  width: 180px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.more-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popup-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-content {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.popup-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  }
+  
+  .popup-buttons button {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+  
+  .popup-buttons button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  }
+  
